@@ -34,18 +34,21 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-primary/10 to-background py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            Get in Touch
+      <section className="relative py-32 px-4 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-400/5 to-indigo-400/5"></div>
+        <div className="relative container mx-auto text-center">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-extrabold mb-8 leading-[1.1]">
+            <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
+              Get in Touch
+            </span>
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-2xl md:text-3xl text-gray-700 max-w-4xl mx-auto font-medium">
             Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
           </p>
         </div>
       </section>
 
-      <section className="container mx-auto px-4 py-16">
+      <section className="container mx-auto px-4 py-24">
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <div>

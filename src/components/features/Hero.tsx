@@ -9,20 +9,25 @@ export const Hero: React.FC<HeroProps> = ({
   onCtaClick,
 }) => {
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 bg-gradient-to-br from-blue-50 to-purple-50">
-      <div className="max-w-5xl mx-auto text-center">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent leading-tight">
-          {headline}
+    <section className="relative min-h-[90vh] flex items-center justify-center px-4 overflow-hidden bg-gradient-to-br from-indigo-50 via-white to-purple-50">
+      {/* Subtle animated background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-400/10 to-purple-400/10 animate-pulse" style={{ animationDuration: '8s' }}></div>
+
+      <div className="relative max-w-6xl mx-auto text-center">
+        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold mb-8 leading-[1.1]">
+          <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+            {headline}
+          </span>
         </h1>
-        <p className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto px-4 sm:px-6">
+        <p className="text-xl md:text-2xl lg:text-3xl text-gray-700 mb-12 max-w-3xl mx-auto font-medium">
           {subheadline}
         </p>
         <Button
           size="lg"
-          className="px-8 py-6 text-lg min-h-[44px]"
+          className="px-10 py-7 text-xl font-semibold bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 shadow-2xl hover:shadow-indigo-500/50 transition-all duration-300 transform hover:scale-105"
           onClick={onCtaClick}
         >
-          {ctaText}
+          {ctaText} →
         </Button>
       </div>
     </section>
