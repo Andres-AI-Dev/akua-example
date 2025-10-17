@@ -1,22 +1,24 @@
+import { useNavigate } from 'react-router-dom'
 import { Hero } from '@/components/features/Hero'
 import { Features } from '@/components/features/Features'
 import { Pricing } from '@/components/features/Pricing'
-import { Footer } from '@/components/layout/Footer'
 import { heroData, aiServices, pricingTiers } from '@/data/landing-data'
 
 export default function LandingPage() {
+  const navigate = useNavigate()
+
   const handleHeroClick = () => {
-    console.log('Hero CTA clicked')
-    // Future: navigate('/signup')
+    navigate('/pricing')
   }
 
   const handlePricingClick = (tierId: string) => {
     console.log(`Pricing tier selected: ${tierId}`)
-    // Future: navigate('/signup', { state: { tier: tierId } })
+    // Navigate to contact page for now
+    navigate('/contact')
   }
 
   return (
-    <main className="min-h-screen bg-white">
+    <div className="bg-white">
       <Hero
         headline={heroData.headline}
         subheadline={heroData.subheadline}
@@ -25,7 +27,6 @@ export default function LandingPage() {
       />
       <Features services={aiServices} />
       <Pricing tiers={pricingTiers} onCtaClick={handlePricingClick} />
-      <Footer />
-    </main>
+    </div>
   )
 }

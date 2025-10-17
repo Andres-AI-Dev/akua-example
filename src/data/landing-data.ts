@@ -16,7 +16,7 @@ export const aiServices: AIService[] = [
     icon: 'FileText',
   },
   {
-    id: 'image-ai',
+    id: 'image-video-ai',
     name: 'Image & Video AI',
     description:
       'Generate, edit, and enhance images and videos using cutting-edge AI technology.',

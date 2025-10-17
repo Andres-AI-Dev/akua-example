@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Github, Twitter, Linkedin, Mail } from 'lucide-react'
 import { FooterProps, FooterSection } from '@/types/landing'
 
@@ -6,37 +7,40 @@ const footerSections: FooterSection[] = [
   {
     title: 'Product',
     links: [
-      { label: 'Features', href: '#features' },
-      { label: 'Pricing', href: '#pricing' },
-      { label: 'AI Services', href: '#services' },
-      { label: 'API Documentation', href: '#' },
+      { label: 'Features', href: '/features' },
+      { label: 'Pricing', href: '/pricing' },
+      { label: 'AI Services', href: '/features' },
     ],
   },
   {
     title: 'Company',
     links: [
-      { label: 'About Us', href: '#' },
-      { label: 'Blog', href: '#' },
-      { label: 'Careers', href: '#' },
-      { label: 'Contact', href: '#' },
+      { label: 'About Us', href: '/about' },
+      { label: 'Contact', href: '/contact' },
     ],
   },
   {
-    title: 'Resources',
+    title: 'Support',
     links: [
-      { label: 'Documentation', href: '#' },
-      { label: 'Help Center', href: '#' },
-      { label: 'Community', href: '#' },
-      { label: 'Status', href: '#' },
+      { label: 'Help Center', href: '/help' },
+      { label: 'Community', href: '/community' },
+      { label: 'Status', href: '/status' },
+    ],
+  },
+  {
+    title: 'Legal',
+    links: [
+      { label: 'Privacy Policy', href: '/privacy' },
+      { label: 'Terms of Service', href: '/terms' },
     ],
   },
 ]
 
 const socialLinks = [
-  { icon: Github, href: '#', label: 'GitHub' },
-  { icon: Twitter, href: '#', label: 'Twitter' },
-  { icon: Linkedin, href: '#', label: 'LinkedIn' },
-  { icon: Mail, href: '#', label: 'Email' },
+  { icon: Mail, href: 'mailto:andrisgonzalis@gmail.com', label: 'Email', external: false },
+  { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn', external: true },
+  { icon: Twitter, href: 'https://twitter.com', label: 'Twitter', external: true },
+  { icon: Github, href: 'https://github.com', label: 'GitHub', external: true },
 ]
 
 export const Footer: React.FC<FooterProps> = ({
@@ -62,6 +66,8 @@ export const Footer: React.FC<FooterProps> = ({
                   <a
                     key={social.label}
                     href={social.href}
+                    target={social.external ? '_blank' : undefined}
+                    rel={social.external ? 'noopener noreferrer' : undefined}
                     aria-label={social.label}
                     className="hover:text-primary transition-colors"
                   >
@@ -80,12 +86,12 @@ export const Footer: React.FC<FooterProps> = ({
                 <ul className="space-y-2">
                   {section.links.map((link) => (
                     <li key={link.label}>
-                      <a
-                        href={link.href}
+                      <Link
+                        to={link.href}
                         className="text-gray-400 hover:text-white transition-colors py-1 block"
                       >
                         {link.label}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -96,22 +102,23 @@ export const Footer: React.FC<FooterProps> = ({
 
         {/* Bottom Section */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-500 text-sm">
-            © {currentYear} {companyName}. All rights reserved.
-          </p>
+          <div className="text-gray-500 text-sm text-center md:text-left">
+            <p>© {currentYear} {companyName}. All rights reserved.</p>
+            <p className="mt-1">Built by Andres Gonzales</p>
+          </div>
           <div className="flex gap-6 text-sm">
-            <a
-              href="#"
+            <Link
+              to="/privacy"
               className="text-gray-500 hover:text-white transition-colors"
             >
               Privacy Policy
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/terms"
               className="text-gray-500 hover:text-white transition-colors"
             >
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </div>

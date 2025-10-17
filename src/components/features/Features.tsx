@@ -38,6 +38,7 @@ export const Features: React.FC<FeaturesProps> = ({ services }) => {
               name={service.name}
               description={service.description}
               icon={iconMap[service.icon]}
+              serviceId={service.id}
             />
           ))}
         </div>

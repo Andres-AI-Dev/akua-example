@@ -18,6 +18,7 @@ export interface FeatureCardProps {
   name: string
   description: string
   icon: LucideIcon
+  serviceId?: string
 }
 
 export interface FeaturesProps {
