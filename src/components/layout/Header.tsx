@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Menu } from 'lucide-react';
 import { mainNavItems } from '@/data/navigation';
 import { MobileMenu } from './MobileMenu';
+import { ThemeToggle } from '@/components/theme-toggle';
 import { useState } from 'react';
 
 export function Header() {
@@ -37,21 +38,25 @@ export function Header() {
           ))}
         </nav>
 
-        {/* Desktop CTA */}
-        <div className="hidden md:flex items-center">
+        {/* Desktop CTA + Theme Toggle */}
+        <div className="hidden md:flex items-center gap-3">
+          <ThemeToggle />
           <Button asChild>
             <Link to="/pricing">Get Started</Link>
           </Button>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-foreground"
-          onClick={() => setMobileMenuOpen(true)}
-          aria-label="Open menu"
-        >
-          <Menu className="h-6 w-6" />
-        </button>
+        {/* Mobile: Theme Toggle + Menu Button */}
+        <div className="md:hidden flex items-center gap-2">
+          <ThemeToggle />
+          <button
+            className="text-foreground"
+            onClick={() => setMobileMenuOpen(true)}
+            aria-label="Open menu"
+          >
+            <Menu className="h-6 w-6" />
+          </button>
+        </div>
 
         {/* Mobile Menu */}
         <MobileMenu open={mobileMenuOpen} onOpenChange={setMobileMenuOpen} />
