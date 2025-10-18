@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Hero } from '@/components/features/Hero'
 import { Features } from '@/components/features/Features'
+import { HowItWorks } from '@/components/features/HowItWorks'
 import { StatsSection } from '@/components/features/StatsSection'
 import { Pricing } from '@/components/features/Pricing'
 import { heroData, aiServices, pricingTiers } from '@/data/landing-data'
@@ -20,12 +21,12 @@ export default function LandingPage() {
   }
 
   const sectionHeaderVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
+        duration: 0.4,
         ease: "easeOut"
       }
     }
@@ -62,6 +63,9 @@ export default function LandingPage() {
           <Features services={aiServices} />
         </div>
       </section>
+
+      {/* How It Works Section */}
+      <HowItWorks />
 
       {/* Stats/Analytics Section */}
       <StatsSection />

@@ -1,15 +1,15 @@
 export default function TermsOfServicePage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4 py-16 max-w-4xl">
         <div className="mb-12">
-          <h1 className="text-4xl font-bold mb-4">Terms of Service</h1>
-          <p className="text-muted-foreground">Last Updated: October 16, 2025</p>
+          <h1 className="text-4xl font-bold mb-4 text-gray-900 dark:text-white">Terms of Service</h1>
+          <p className="text-muted-foreground dark:text-gray-400">Last Updated: October 16, 2025</p>
         </div>
 
         <div className="prose prose-lg max-w-none space-y-8">
           <section>
-            <h2 className="text-2xl font-bold mb-4">Introduction</h2>
+            <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Introduction</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
               These Terms of Service ("Terms") govern your use of Akua AI Services ("Service") provided by Andres Gonzales ("we", "our", or "us").
             </p>
@@ -19,7 +19,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold mb-4">1. Acceptance of Terms</h2>
+            <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">1. Acceptance of Terms</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
               By creating an account or using our Service, you acknowledge that you have read, understood, and agree to be bound by these Terms and our Privacy Policy.
             </p>
@@ -29,7 +29,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold mb-4">2. Description of Service</h2>
+            <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">2. Description of Service</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
               Akua AI Services provides access to various artificial intelligence tools and services, including but not limited to:
             </p>
@@ -47,7 +47,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold mb-4">3. User Responsibilities</h2>
+            <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">3. User Responsibilities</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">You agree to:</p>
             <ul className="list-disc ml-6 space-y-2 text-muted-foreground">
               <li>Provide accurate and complete information when creating an account</li>
@@ -62,7 +62,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold mb-4">4. Intellectual Property</h2>
+            <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">4. Intellectual Property</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
               The Service and its original content, features, and functionality are owned by Andres Gonzales and are protected by international copyright, trademark, patent, trade secret, and other intellectual property laws.
             </p>
@@ -72,7 +72,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold mb-4">5. Limitation of Liability</h2>
+            <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">5. Limitation of Liability</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
               To the maximum extent permitted by law, Andres Gonzales shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses.
             </p>
@@ -82,13 +82,13 @@ export default function TermsOfServicePage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold mb-4">6. Contact Information</h2>
-            <p className="text-muted-foreground leading-relaxed mb-4">
+            <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">6. Contact Information</h2>
+            <p className="text-muted-foreground dark:text-gray-400 leading-relaxed mb-4">
               If you have any questions about these Terms, please contact us at:
             </p>
-            <div className="bg-muted/50 p-6 rounded-lg">
-              <p className="font-semibold">Andres Gonzales</p>
-              <p className="text-muted-foreground">Email: <a href="mailto:andrisgonzalis@gmail.com" className="text-primary hover:underline">andrisgonzalis@gmail.com</a></p>
+            <div className="bg-muted/50 dark:bg-gray-800 p-6 rounded-lg">
+              <p className="font-semibold text-gray-900 dark:text-white">Andres Gonzales</p>
+              <p className="text-muted-foreground dark:text-gray-400">Email: <a href="mailto:andrisgonzalis@gmail.com" className="text-primary hover:underline">andrisgonzalis@gmail.com</a></p>
             </div>
           </section>
         </div>
