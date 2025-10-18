@@ -32,17 +32,17 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Hero Section */}
-      <section className="relative py-32 px-4 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-400/5 to-indigo-400/5"></div>
+      <section className="relative py-32 px-4 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-gray-950 dark:via-gray-900 dark:to-blue-950">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-400/5 to-indigo-400/5 dark:from-blue-500/10 dark:to-indigo-500/10"></div>
         <div className="relative container mx-auto text-center">
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-extrabold mb-8 leading-[1.1]">
             <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
               Get in Touch
             </span>
           </h1>
-          <p className="text-2xl md:text-3xl text-gray-700 max-w-4xl mx-auto font-medium">
+          <p className="text-2xl md:text-3xl text-gray-700 dark:text-gray-300 max-w-4xl mx-auto font-medium">
             Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
           </p>
         </div>
@@ -52,7 +52,7 @@ export default function ContactPage() {
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <div>
-            <h2 className="text-3xl font-bold mb-6">Send Us a Message</h2>
+            <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">Send Us a Message</h2>
             {submitted ? (
               <Card className="p-8 bg-green-50 border-green-200">
                 <p className="text-green-800 text-center text-lg font-semibold">
@@ -117,7 +117,7 @@ export default function ContactPage() {
 
           {/* Contact Information */}
           <div>
-            <h2 className="text-3xl font-bold mb-6">Contact Information</h2>
+            <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">Contact Information</h2>
             <div className="space-y-6">
               <Card className="p-6">
                 <div className="flex items-start space-x-4">
@@ -173,8 +173,8 @@ export default function ContactPage() {
             </div>
 
             <div className="mt-8">
-              <h3 className="font-semibold text-lg mb-4">Business Hours</h3>
-              <p className="text-muted-foreground">
+              <h3 className="font-semibold text-lg mb-4 text-gray-900 dark:text-white">Business Hours</h3>
+              <p className="text-muted-foreground dark:text-gray-400">
                 Monday - Friday: 9:00 AM - 6:00 PM EST<br />
                 Saturday - Sunday: Closed
               </p>
