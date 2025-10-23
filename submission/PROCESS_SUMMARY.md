@@ -4,6 +4,98 @@
 
 This document explains how I used AI agents and context engineering throughout the development of the Akua AI Services Platform across three feature iterations.
 
+## AI Tooling and Agent Setup
+
+### Claude Code with Custom Slash Commands
+
+This project was developed using **Claude Code**, an AI-powered CLI tool that enables systematic AI-assisted development. I created custom slash commands that automated entire workflow phases:
+
+**Custom Slash Commands:**
+- `/design` - Automatically generate comprehensive PRDs from feature requests
+- `/plan` - Break down PRDs into actionable tasks with dependencies
+- `/implement` - Execute TDD implementation (tests first, then code)
+- `/validate` - Run quality checks and generate test reports
+- `/start-feature-X` - Complete end-to-end workflow for each feature iteration
+
+These slash commands evolved with each feature, growing from 8KB (feature-1) to 30KB (feature-3) as they captured more patterns and learnings.
+
+### Model Context Protocol (MCP) Servers
+
+To give the AI agent deeper capabilities, I integrated **three MCP servers** that extended Claude Code's functionality:
+
+#### 1. Playwright MCP Server
+**Purpose:** End-to-end testing and real-time frontend monitoring
+
+**Key Capabilities:**
+- **Browser automation:** Navigate pages, click elements, fill forms
+- **Console error detection:** Monitor JavaScript errors in real-time
+- **Screenshot capture:** Visual verification of UI changes
+- **Accessibility snapshots:** Capture page structure for AI analysis
+
+**Impact:** The AI could see exactly what users would see, catch console errors immediately, and iterate on fixes without manual browser testing.
+
+#### 2. Firebase MCP Server
+**Purpose:** Backend setup and database management
+
+**Key Capabilities:**
+- **Firestore operations:** Read/write database documents
+- **Auth management:** Configure authentication providers
+- **Security rules:** Set up and validate Firestore security rules
+- **Real-time monitoring:** Check backend state during development
+
+**Impact:** The AI managed the entire Firebase backend setup, from authentication configuration to database schema design, without requiring manual Firebase console work.
+
+#### 3. Vercel MCP Server
+**Purpose:** Deployment automation and environment management
+
+**Key Capabilities:**
+- **Deployment triggers:** Initiate and monitor builds
+- **Environment variables:** Configure production secrets
+- **Build logs:** Debug deployment issues
+- **Preview URLs:** Access and test deployed applications
+
+**Impact:** The AI handled deployment complexities, including environment variable configuration and build troubleshooting, enabling true production deployment without manual Vercel dashboard work.
+
+### Background Development Server
+
+A critical innovation in my workflow was **running the dev server in the background** during AI coding sessions:
+
+```bash
+npm run dev &  # Run in background
+```
+
+**Why This Mattered:**
+- AI could monitor **frontend and backend simultaneously**
+- Real-time detection of TypeScript errors, React warnings, console errors
+- Immediate feedback loop: code → compile → test → iterate
+- No context switching between coding and testing
+
+**Example:** When implementing Firebase auth, the AI could:
+1. Write authentication code
+2. See compile errors immediately via dev server output
+3. Fix TypeScript issues
+4. Monitor browser console for runtime errors via Playwright MCP
+5. Iterate until all errors resolved
+6. Capture screenshots to verify UI
+
+This created a **continuous feedback loop** that dramatically improved code quality and development speed.
+
+### No Subagents (Yet)
+
+For this project, I did not use subagents (agents spawning other agents for specialized tasks). All work was done by a single Claude Code agent with access to the three MCP servers and custom slash commands.
+
+**Why No Subagents:**
+- Wanted to master the basic workflow first
+- Single agent with MCP servers was sufficient for this project scope
+- Easier to debug and understand the AI's decision-making process
+
+**Future Direction:**
+I'm excited to explore subagents in future projects, particularly for:
+- Parallel task execution (e.g., frontend + backend simultaneously)
+- Specialized code review agents
+- Automated testing agents that run in parallel with implementation
+- Documentation generation agents
+
 ## Context Engineering Framework
 
 ### Core Artifacts
