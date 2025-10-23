@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { LineChart, Line, AreaChart, Area, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts'
+import { AreaChart, Area, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 import { TrendingUp, Users, Zap, Brain } from 'lucide-react'
 
 const performanceData = [
@@ -45,7 +45,6 @@ export const StatsSection: React.FC = () => {
       y: 0,
       transition: {
         duration: 0.3,
-        ease: "easeOut"
       }
     }
   }
@@ -79,7 +78,7 @@ export const StatsSection: React.FC = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          {statsData.map((stat, index) => (
+          {statsData.map((stat) => (
             <motion.div
               key={stat.label}
               variants={itemVariants}

@@ -186,7 +186,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   };
 
   // Upload profile picture
-  const uploadProfilePicture = async (file: File): Promise<string> => {
+  const uploadProfilePicture = async (_file: File): Promise<string> => {
     if (!user || !auth.currentUser) {
       throw new Error('No user logged in');
     }
