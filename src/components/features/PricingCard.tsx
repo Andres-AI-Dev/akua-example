@@ -35,19 +35,19 @@ export const PricingCard: React.FC<PricingCardProps> = ({
       )}
       <CardHeader className="text-center pb-8 pt-8">
         <CardTitle className="text-2xl font-bold mb-2">{tier.name}</CardTitle>
-        <CardDescription className="text-gray-600 mb-4">
+        <CardDescription className="text-gray-600 dark:text-gray-300 mb-4">
           {tier.description}
         </CardDescription>
         <div className="mt-4">
           {typeof tier.price === 'number' ? (
             <>
-              <span className="text-5xl font-bold text-gray-900">
+              <span className="text-5xl font-bold text-gray-900 dark:text-white">
                 ${tier.price}
               </span>
-              <span className="text-gray-600 ml-2">/month</span>
+              <span className="text-gray-600 dark:text-gray-400 ml-2">/month</span>
             </>
           ) : (
-            <span className="text-3xl font-bold text-gray-900">
+            <span className="text-3xl font-bold text-gray-900 dark:text-white">
               {tier.price}
             </span>
           )}
@@ -58,7 +58,7 @@ export const PricingCard: React.FC<PricingCardProps> = ({
           {tier.features.map((feature, index) => (
             <li key={index} className="flex items-start">
               <Check className="h-5 w-5 text-primary mr-3 flex-shrink-0 mt-0.5" />
-              <span className="text-sm sm:text-base text-gray-700">
+              <span className="text-sm sm:text-base text-gray-700 dark:text-white">
                 {feature}
               </span>
             </li>

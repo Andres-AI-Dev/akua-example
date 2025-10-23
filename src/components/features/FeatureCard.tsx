@@ -25,22 +25,17 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
 
   return (
     <motion.div
+      className="h-full"
       whileHover={{ y: -8, scale: 1.02 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
     >
       <Card
-        className={`group relative overflow-hidden bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 hover:shadow-2xl hover:shadow-indigo-500/20 dark:hover:shadow-indigo-500/30 transition-shadow duration-500 ${serviceId ? 'cursor-pointer' : ''} border-2 hover:border-indigo-300 dark:border-gray-700 dark:hover:border-indigo-500 h-full`}
+        className={`group relative overflow-hidden bg-white dark:bg-gray-800 hover:shadow-xl transition-shadow duration-300 ${serviceId ? 'cursor-pointer' : ''} border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 h-full flex flex-col`}
         onClick={handleClick}
       >
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-purple-500/5 dark:from-indigo-500/10 dark:to-purple-500/10"
-          initial={{ opacity: 0 }}
-          whileHover={{ opacity: 1 }}
-          transition={{ duration: 0.3 }}
-        />
-        <CardHeader className="relative">
+        <CardHeader className="relative flex-1 flex flex-col">
           <motion.div
-            className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-900 dark:to-purple-900 group-hover:from-indigo-200 group-hover:to-purple-200 dark:group-hover:from-indigo-800 dark:group-hover:to-purple-800 transition-all duration-300"
+            className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gray-100 dark:bg-gray-700 group-hover:bg-gray-200 dark:group-hover:bg-gray-600 transition-all duration-300"
             whileHover={{ rotate: [0, -10, 10, -10, 0] }}
             transition={{ duration: 0.5 }}
           >
@@ -48,18 +43,18 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
               whileHover={{ scale: 1.2 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              <Icon className="h-8 w-8 text-indigo-600 dark:text-indigo-400" />
+              <Icon className="h-8 w-8 text-gray-700 dark:text-gray-300" />
             </motion.div>
           </motion.div>
-          <CardTitle className="text-2xl font-bold mb-3 text-gray-900 dark:text-gray-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300">
+          <CardTitle className="text-2xl font-bold mb-3 text-gray-900 dark:text-white transition-colors duration-300">
             {name}
           </CardTitle>
-          <CardDescription className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+          <CardDescription className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed flex-1">
             {description}
           </CardDescription>
           {serviceId && (
             <motion.div
-              className="mt-4 text-indigo-600 font-semibold inline-flex items-center"
+              className="mt-4 text-gray-900 dark:text-white font-semibold inline-flex items-center"
               whileHover={{ x: 4 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >

@@ -12,13 +12,10 @@ export default function PricingPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Hero Section */}
-      <section className="relative py-32 px-4 overflow-hidden bg-gradient-to-br from-purple-50 via-white to-pink-50 dark:from-gray-950 dark:via-gray-900 dark:to-purple-950">
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-400/5 to-pink-400/5 dark:from-purple-500/10 dark:to-pink-500/10"></div>
+      <section className="relative py-32 px-4 overflow-hidden bg-white dark:bg-gray-900">
         <div className="relative container mx-auto text-center">
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-extrabold mb-8 leading-[1.1]">
-            <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 bg-clip-text text-transparent">
-              Simple, Transparent Pricing
-            </span>
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-extrabold mb-8 leading-[1.1] text-gray-900 dark:text-white">
+            Simple, Transparent Pricing
           </h1>
           <p className="text-2xl md:text-3xl text-gray-700 dark:text-gray-300 max-w-4xl mx-auto font-medium">
             Choose the perfect plan for your needs. All plans include access to our core AI services.
@@ -34,12 +31,10 @@ export default function PricingPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900">
+      <section className="py-24 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4">
-          <h2 className="text-5xl md:text-6xl font-extrabold text-center mb-16">
-            <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-              Frequently Asked Questions
-            </span>
+          <h2 className="text-5xl md:text-6xl font-extrabold text-center mb-16 text-gray-900 dark:text-white">
+            Frequently Asked Questions
           </h2>
           <div className="max-w-4xl mx-auto space-y-8">
             <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">

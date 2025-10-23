@@ -42,7 +42,7 @@ export default function LandingPage() {
       />
 
       {/* Features Section */}
-      <section className="py-24 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
+      <section className="py-24 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <motion.div
             className="text-center mb-16"
@@ -51,10 +51,8 @@ export default function LandingPage() {
             viewport={{ once: true, margin: "-100px" }}
             variants={sectionHeaderVariants}
           >
-            <h2 className="text-5xl md:text-6xl font-extrabold mb-6">
-              <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                AI-Powered Services
-              </span>
+            <h2 className="text-5xl md:text-6xl font-extrabold mb-6 text-gray-900 dark:text-white">
+              AI-Powered Services
             </h2>
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Comprehensive AI solutions designed to transform your business operations and drive innovation.
@@ -71,7 +69,7 @@ export default function LandingPage() {
       <StatsSection />
 
       {/* Pricing Section */}
-      <section className="py-24 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900">
+      <section className="py-24 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4">
           <motion.div
             className="text-center mb-16"
@@ -80,10 +78,8 @@ export default function LandingPage() {
             viewport={{ once: true, margin: "-100px" }}
             variants={sectionHeaderVariants}
           >
-            <h2 className="text-5xl md:text-6xl font-extrabold mb-6">
-              <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                Simple, Transparent Pricing
-              </span>
+            <h2 className="text-5xl md:text-6xl font-extrabold mb-6 text-gray-900 dark:text-white">
+              Simple, Transparent Pricing
             </h2>
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Choose the perfect plan for your needs. All plans include access to our core AI services.

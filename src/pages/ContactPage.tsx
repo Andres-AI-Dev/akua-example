@@ -34,13 +34,10 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Hero Section */}
-      <section className="relative py-32 px-4 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-gray-950 dark:via-gray-900 dark:to-blue-950">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-400/5 to-indigo-400/5 dark:from-blue-500/10 dark:to-indigo-500/10"></div>
+      <section className="relative py-32 px-4 overflow-hidden bg-white dark:bg-gray-900">
         <div className="relative container mx-auto text-center">
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-extrabold mb-8 leading-[1.1]">
-            <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
-              Get in Touch
-            </span>
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-extrabold mb-8 leading-[1.1] text-gray-900 dark:text-white">
+            Get in Touch
           </h1>
           <p className="text-2xl md:text-3xl text-gray-700 dark:text-gray-300 max-w-4xl mx-auto font-medium">
             Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.

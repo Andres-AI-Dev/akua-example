@@ -10,10 +10,7 @@ export const Hero: React.FC<HeroProps> = ({
   onCtaClick,
 }) => {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center px-4 overflow-hidden bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-gray-950 dark:via-gray-900 dark:to-indigo-950">
-      {/* Subtle animated background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-400/10 to-purple-400/10 dark:from-blue-500/20 dark:to-purple-500/20 animate-pulse" style={{ animationDuration: '8s' }}></div>
-
+    <section className="relative min-h-[90vh] flex items-center justify-center px-4 overflow-hidden bg-white dark:bg-gray-900">
       <motion.div
         className="relative max-w-6xl mx-auto text-center"
         initial={{ opacity: 0, y: 20 }}
@@ -21,14 +18,12 @@ export const Hero: React.FC<HeroProps> = ({
         transition={{ duration: 0.4, ease: "easeOut" }}
       >
         <motion.h1
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold mb-8 leading-[1.1]"
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold mb-8 leading-[1.1] text-gray-900 dark:text-white"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
         >
-          <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-            {headline}
-          </span>
+          {headline}
         </motion.h1>
         <motion.p
           className="text-xl md:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 mb-12 max-w-3xl mx-auto font-medium"
@@ -45,7 +40,7 @@ export const Hero: React.FC<HeroProps> = ({
         >
           <Button
             size="lg"
-            className="px-10 py-7 text-xl font-semibold bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 shadow-2xl hover:shadow-indigo-500/50 transition-all duration-300 transform hover:scale-105"
+            className="px-10 py-7 text-xl font-semibold bg-primary hover:bg-primary/90 shadow-lg transition-all duration-300"
             onClick={onCtaClick}
           >
             {ctaText} →

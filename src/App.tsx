@@ -1,11 +1,23 @@
 import { lazy, Suspense } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Layout } from '@/components/layout/Layout'
+import { AuthProvider } from '@/contexts/AuthContext'
+import { PrivateRoute } from '@/components/layout/PrivateRoute'
 
 // Lazy load all page components for code splitting
 const LandingPage = lazy(() => import('@/pages/LandingPage'))
 const FeaturesPage = lazy(() => import('@/pages/FeaturesPage'))
 const PricingPage = lazy(() => import('@/pages/PricingPage'))
+
+// Auth pages
+const SignupPage = lazy(() => import('@/pages/auth/SignupPage'))
+const LoginPage = lazy(() => import('@/pages/auth/LoginPage'))
+const ResetPasswordPage = lazy(() => import('@/pages/auth/ResetPasswordPage'))
+
+// Protected pages
+const DashboardPage = lazy(() => import('@/pages/DashboardPage'))
+const ProfilePage = lazy(() => import('@/pages/ProfilePage'))
+const SettingsPage = lazy(() => import('@/pages/SettingsPage'))
 
 // Service pages
 const ContentGenerationPage = lazy(() => import('@/pages/services/ContentGenerationPage'))
@@ -40,14 +52,25 @@ function LoadingFallback() {
 
 function App() {
   return (
-    <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-      <Layout>
-        <Suspense fallback={<LoadingFallback />}>
-          <Routes>
-            {/* Main pages */}
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/features" element={<FeaturesPage />} />
-            <Route path="/pricing" element={<PricingPage />} />
+    <AuthProvider>
+      <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+        <Layout>
+          <Suspense fallback={<LoadingFallback />}>
+            <Routes>
+              {/* Main pages */}
+              <Route path="/" element={<LandingPage />} />
+              <Route path="/features" element={<FeaturesPage />} />
+              <Route path="/pricing" element={<PricingPage />} />
+
+              {/* Auth pages */}
+              <Route path="/signup" element={<SignupPage />} />
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/reset-password" element={<ResetPasswordPage />} />
+
+              {/* Protected pages */}
+              <Route path="/dashboard" element={<PrivateRoute><DashboardPage /></PrivateRoute>} />
+              <Route path="/profile" element={<PrivateRoute><ProfilePage /></PrivateRoute>} />
+              <Route path="/settings" element={<PrivateRoute><SettingsPage /></PrivateRoute>} />
 
             {/* Service pages */}
             <Route path="/services/content-generation" element={<ContentGenerationPage />} />
@@ -68,12 +91,13 @@ function App() {
             <Route path="/privacy" element={<PrivacyPolicyPage />} />
             <Route path="/terms" element={<TermsOfServicePage />} />
 
-            {/* 404 catch-all */}
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
-        </Suspense>
-      </Layout>
-    </Router>
+              {/* 404 catch-all */}
+              <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+          </Suspense>
+        </Layout>
+      </Router>
+    </AuthProvider>
   )
 }
 
