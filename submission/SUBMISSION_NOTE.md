@@ -87,7 +87,7 @@ As specified in the Feature 2 PRD, I successfully implemented:
 
 ## Apology and Commitment
 
-I sincerely apologize for this error. I completed the assignment on time but failed to verify that I pushed to the correct repository. This was an organizational mistake on my part, not a delay in completing the work.
+I sincerely apologize for this error. I completed the assignment on time but failed to verify that I pushed to the correct repository. This was a mistake on my part, not a delay in completing the work.
 
 All commit metadata (author, date, timestamps) is authentic and shows the work was completed during the assignment week.
 
